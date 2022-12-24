@@ -19,16 +19,16 @@ const Scene = () => {
     // Renderer
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+
+    currentMount.appendChild(renderer.domElement);
   }, []);
 
   return (
     <div
-      className="container3d"
+      className="Contenedor3D"
       ref={mountRef}
       style={{ width: "100%", height: "100vh" }}
-    >
-      <h1>Hola mundo</h1>
-    </div>
+    ></div>
   );
 };
 
