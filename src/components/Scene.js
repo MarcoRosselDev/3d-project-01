@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import * as THREE from "three";
+import scene from "./scene.css";
 
 const Scene = () => {
   const mountRef = useRef(null);
@@ -21,6 +22,13 @@ const Scene = () => {
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
 
     currentMount.appendChild(renderer.domElement);
+
+    // Cubo
+    const cubo = new THREE.Mesh(
+      new THREE.BoxBufferGeometry(1, 1, 1),
+      new THREE.MeshBasicMaterial()
+    );
+    scene.add(cubo);
   }, []);
 
   return (
