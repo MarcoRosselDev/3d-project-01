@@ -54,13 +54,12 @@ const Scene = () => {
 
     // Torus
     const torusGeometry = new THREE.TorusKnotGeometry(0.4, 0.1, 100, 16);
-    const torusMaterial = new THREE.MeshBasicMaterial({
-      color: 0x3f7b9d,
-      transparent: true,
-      opacity: 0.3,
-      wireframe: true,
+
+    const torusMaterialSilver = new THREE.MeshMatcapMaterial({
+      color: 0xffffff,
     });
-    const torusKnot = new THREE.Mesh(torusGeometry, torusMaterial);
+
+    const torusKnot = new THREE.Mesh(torusGeometry, torusMaterialSilver);
     scene.add(torusKnot);
     torusKnot.position.x = -2;
 
