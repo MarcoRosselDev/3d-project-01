@@ -30,7 +30,7 @@ const Scene = () => {
 
     // Cubo
     const cubo = new THREE.Mesh(
-      new THREE.BoxBufferGeometry(1, 1, 1),
+      new THREE.BoxGeometry(1, 1, 1),
       new THREE.MeshBasicMaterial({
         color: 0x3f7b9d,
         transparent: true,
@@ -42,11 +42,8 @@ const Scene = () => {
 
     // Sphere
     const geometry = new THREE.SphereGeometry(0.8, 32, 16);
-    const material = new THREE.MeshBasicMaterial({
+    const material = new THREE.MeshMatcapMaterial({
       color: 0x3f7b9d,
-      transparent: true,
-      opacity: 0.3,
-      wireframe: true,
     });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
@@ -57,6 +54,7 @@ const Scene = () => {
 
     const torusMaterialSilver = new THREE.MeshMatcapMaterial({
       color: 0xffffff,
+      flatShading: true,
     });
 
     const torusKnot = new THREE.Mesh(torusGeometry, torusMaterialSilver);
