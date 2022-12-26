@@ -10,7 +10,7 @@ const Scene = () => {
     // Scene
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      25,
+      55,
       currentMount.clientWidth / currentMount.clientHeight,
       0.1,
       1000
@@ -30,6 +30,13 @@ const Scene = () => {
       new THREE.MeshBasicMaterial()
     );
     scene.add(cubo);
+
+    // Sphere
+    const geometry = new THREE.SphereGeometry(0.8, 32, 16);
+    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+    sphere.position.x = 2;
 
     // Render the scene
     renderer.render(scene, camera);
