@@ -41,9 +41,14 @@ const Scene = () => {
     scene.add(cubo);
 
     // Sphere
+    const textureLoader = new THREE.TextureLoader();
+    const matcapMetalic = textureLoader.load(
+      "./textures/D0CCCB_524D50_928891_727581.png"
+    );
+
     const geometry = new THREE.SphereGeometry(0.8, 32, 16);
     const material = new THREE.MeshMatcapMaterial({
-      color: 0x3f7b9d,
+      matcap: matcapMetalic,
     });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
