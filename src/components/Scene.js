@@ -33,20 +33,33 @@ const Scene = () => {
       new THREE.BoxBufferGeometry(1, 1, 1),
       new THREE.MeshBasicMaterial({
         color: 0x3f7b9d,
+        transparent: true,
+        opacity: 0.3,
+        wireframe: true,
       })
     );
     scene.add(cubo);
 
     // Sphere
     const geometry = new THREE.SphereGeometry(0.8, 32, 16);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x3f7b9d,
+      transparent: true,
+      opacity: 0.3,
+      wireframe: true,
+    });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
     sphere.position.x = 2;
 
     // Torus
     const torusGeometry = new THREE.TorusKnotGeometry(0.4, 0.1, 100, 16);
-    const torusMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const torusMaterial = new THREE.MeshBasicMaterial({
+      color: 0x3f7b9d,
+      transparent: true,
+      opacity: 0.3,
+      wireframe: true,
+    });
     const torusKnot = new THREE.Mesh(torusGeometry, torusMaterial);
     scene.add(torusKnot);
     torusKnot.position.x = -2;
