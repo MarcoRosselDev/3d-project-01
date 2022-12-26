@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import * as THREE from "three";
 import scene from "./scene.css";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const Scene = () => {
   const mountRef = useRef(null);
@@ -24,6 +25,9 @@ const Scene = () => {
 
     currentMount.appendChild(renderer.domElement);
 
+    // Controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+
     // Cubo
     const cubo = new THREE.Mesh(
       new THREE.BoxBufferGeometry(1, 1, 1),
@@ -46,7 +50,12 @@ const Scene = () => {
     torusKnot.position.x = -2;
 
     // Render the scene
-    renderer.render(scene, camera);
+
+    const animate = () => {
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+    animate();
 
     // clean up scene
     return () => {
