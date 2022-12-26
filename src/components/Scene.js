@@ -55,10 +55,11 @@ const Scene = () => {
     sphere.position.x = 2;
 
     // Torus
+    const marcapGolding = textureLoader.load("./textures/golden-texture.png");
     const torusGeometry = new THREE.TorusKnotGeometry(0.4, 0.1, 100, 16);
 
     const torusMaterialSilver = new THREE.MeshMatcapMaterial({
-      color: 0xffffff,
+      matcap: marcapGolding,
       flatShading: true,
     });
 
