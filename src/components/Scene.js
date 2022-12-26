@@ -28,18 +28,6 @@ const Scene = () => {
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    // Cubo
-    const cubo = new THREE.Mesh(
-      new THREE.BoxGeometry(1, 1, 1),
-      new THREE.MeshBasicMaterial({
-        color: 0x3f7b9d,
-        transparent: true,
-        opacity: 0.3,
-        wireframe: true,
-      })
-    );
-    scene.add(cubo);
-
     // Sphere
     const textureLoader = new THREE.TextureLoader();
     const matcapMetalic = textureLoader.load(
@@ -65,7 +53,7 @@ const Scene = () => {
 
     const torusKnot = new THREE.Mesh(torusGeometry, torusMaterialSilver);
     scene.add(torusKnot);
-    torusKnot.position.x = -2;
+    torusKnot.position.x = 0;
 
     // Render the scene
 
