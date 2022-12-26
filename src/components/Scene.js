@@ -31,7 +31,9 @@ const Scene = () => {
     // Cubo
     const cubo = new THREE.Mesh(
       new THREE.BoxBufferGeometry(1, 1, 1),
-      new THREE.MeshBasicMaterial()
+      new THREE.MeshBasicMaterial({
+        color: 0x3f7b9d,
+      })
     );
     scene.add(cubo);
 

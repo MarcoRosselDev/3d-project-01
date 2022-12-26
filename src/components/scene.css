@@ -2,5 +2,6 @@ body {
   margin: 0;
 }
 canvas {
-  background: black;
+  background: rgba(59, 99, 7, 0.76);
+  background-color: blueviolet;
 }
