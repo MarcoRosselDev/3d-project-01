@@ -15,6 +15,7 @@ const Scene = () => {
       0.1,
       1000
     );
+    camera.position.z = 4;
     scene.add(camera);
 
     // Renderer
@@ -29,6 +30,14 @@ const Scene = () => {
       new THREE.MeshBasicMaterial()
     );
     scene.add(cubo);
+
+    // Render the scene
+    renderer.render(scene, camera);
+
+    // clean up scene
+    return () => {
+      currentMount.removeChild(renderer.domElement);
+    };
   }, []);
 
   return (
