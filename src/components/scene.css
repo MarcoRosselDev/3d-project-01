@@ -1,7 +1,3 @@
 body {
-  margin: 0;
-}
-canvas {
-  background: rgba(59, 99, 7, 0.76);
-  background-color: blueviolet;
+  margin: 2rem;
 }
