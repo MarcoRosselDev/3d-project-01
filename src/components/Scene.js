@@ -38,6 +38,13 @@ const Scene = () => {
     scene.add(sphere);
     sphere.position.x = 2;
 
+    // Torus
+    const torusGeometry = new THREE.TorusKnotGeometry(0.4, 0.1, 100, 16);
+    const torusMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const torusKnot = new THREE.Mesh(torusGeometry, torusMaterial);
+    scene.add(torusKnot);
+    torusKnot.position.x = -2;
+
     // Render the scene
     renderer.render(scene, camera);
 
