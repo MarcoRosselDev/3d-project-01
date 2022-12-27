@@ -27,9 +27,21 @@ const Cubo = () => {
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
 
+    // textures
+    const textureLoader = new THREE.TextureLoader();
+    const map = textureLoader.load(
+      "./textures/drick/Stylized_Dry_Mud_001_basecolor.jpg"
+    );
+    const ao = textureLoader.load("./textures/drick/ao.jpg");
+    const rougnesMap = textureLoader.load("./textures/drick/rougnesMap.jpg");
+
     // Cubo
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshStandardMaterial({});
+    const material = new THREE.MeshStandardMaterial({
+      map: map,
+      aoMap: ao,
+      roughnessMap: rougnesMap,
+    });
     const cubo = new THREE.Mesh(geometry, material);
     cubo.scale.set(2, 2, 2);
     scene.add(cubo);
