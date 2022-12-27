@@ -28,16 +28,15 @@ const Cubo = () => {
     const controls = new OrbitControls(camera, renderer.domElement);
 
     // Cubo
-    const cubo = new THREE.Mesh(
-      new THREE.BoxGeometry(1, 1, 1),
-      new THREE.MeshBasicMaterial({
-        color: 0x3f7b9d,
-        transparent: true,
-        opacity: 0.3,
-        wireframe: true,
-      })
-    );
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshStandardMaterial();
+    const cubo = new THREE.Mesh(geometry, material);
+    cubo.scale.set(2, 2, 2);
     scene.add(cubo);
+
+    // luz
+    const AO = new THREE.AmbientLight(0xffffff, 1);
+    scene.add(AO);
 
     // Render the scene
 
