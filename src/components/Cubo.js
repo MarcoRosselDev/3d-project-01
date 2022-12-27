@@ -29,7 +29,7 @@ const Cubo = () => {
 
     // Cubo
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshStandardMaterial();
+    const material = new THREE.MeshStandardMaterial({});
     const cubo = new THREE.Mesh(geometry, material);
     cubo.scale.set(2, 2, 2);
     scene.add(cubo);
