@@ -45,6 +45,7 @@ const Cubo = () => {
       roughnessMap: rougnesMap,
       normalMap: normalMap,
       displacementMap: heightMap,
+      displacementScale: 0.04,
     });
     const cubo = new THREE.Mesh(geometry, material);
     cubo.scale.set(2, 2, 2);
@@ -53,6 +54,12 @@ const Cubo = () => {
     // luz
     const AO = new THREE.AmbientLight(0xffffff, 1);
     scene.add(AO);
+
+    const pointLinght = new THREE.PointLight(0xffffff, 1.3);
+    pointLinght.position.y = 2;
+    pointLinght.position.x = 2;
+    pointLinght.position.z = 1.2;
+    scene.add(pointLinght);
 
     // Render the scene
 
