@@ -52,13 +52,7 @@ const Cubo = () => {
       currentMount.removeChild(renderer.domElement);
     };
   }, []);
-  return (
-    <div
-      className="Contenedor3D"
-      ref={mountRef}
-      style={{ width: "100%", height: "100vh" }}
-    ></div>
-  );
+  return <div className="Contenedor3D" ref={mountRef}></div>;
 };
 
 export default Cubo;

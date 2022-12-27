@@ -69,13 +69,7 @@ const Scene = () => {
     };
   }, []);
 
-  return (
-    <div
-      className="Contenedor3D"
-      ref={mountRef}
-      style={{ width: "100%", height: "100vh" }}
-    ></div>
-  );
+  return <div className="Contenedor3D" ref={mountRef}></div>;
 };
 
 export default Scene;
