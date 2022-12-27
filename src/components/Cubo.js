@@ -34,13 +34,17 @@ const Cubo = () => {
     );
     const ao = textureLoader.load("./textures/drick/ao.jpg");
     const rougnesMap = textureLoader.load("./textures/drick/rougnesMap.jpg");
+    const normalMap = textureLoader.load("./textures/drick/normal.jpg");
+    const heightMap = textureLoader.load("./textures/drick/height.png");
 
     // Cubo
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const geometry = new THREE.BoxGeometry(1, 1, 1, 250, 250, 250);
     const material = new THREE.MeshStandardMaterial({
       map: map,
       aoMap: ao,
       roughnessMap: rougnesMap,
+      normalMap: normalMap,
+      displacementMap: heightMap,
     });
     const cubo = new THREE.Mesh(geometry, material);
     cubo.scale.set(2, 2, 2);
