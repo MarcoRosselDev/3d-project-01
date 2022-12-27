@@ -55,6 +55,14 @@ const Scene = () => {
     scene.add(torusKnot);
     torusKnot.position.x = 0;
 
+    // Resize
+    const resize = () => {
+      renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+      camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
+      camera.updateProjectionMatrix();
+    };
+    window.addEventListener("resize", resize);
+
     // Render the scene
 
     const animate = () => {

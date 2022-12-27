@@ -4,11 +4,10 @@ body {
 
 .container {
   display: flex;
-  gap: 3rem;
 }
 
 .Contenedor3D {
   color: rgb(29, 100, 162);
-  width: 90vh;
-  height: 70vh;
+  width: 200vh;
+  height: 80vh;
 }
